@@ -4,9 +4,9 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class ChessBoard extends JFrame {
+public class Board extends JFrame {
 
-	public ChessBoard(String title) {
+	public Board(String title) {
 		JButton chessButton;
 
 		for (int row = 0; row < 8; row++) {
@@ -40,6 +40,6 @@ public class ChessBoard extends JFrame {
 	}
 
 	public static void main(String[] args) {		
-		ChessBoard chessBoard = new ChessBoard("Chess");
+		Board chessBoard = new Board("Chess");
 	}
 }
