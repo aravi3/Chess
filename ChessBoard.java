@@ -6,46 +6,37 @@ import javax.swing.JFrame;
 
 public class ChessBoard extends JFrame {
 
-	public static final int squareCount = 64;
-
 	public ChessBoard(String title) {
-		
-		Color blackColor = Color.BLACK;
-		Color whiteColor = Color.WHITE;
+		JButton chessButton;
 
-		JButton chessButton = null;
-		
-		for (int i = 1; i <= squareCount; i++) {
-
-			if (i % 2 == 0) {
-		
+		for (int row = 0; row < 8; row++) {
+			for (int col = 0; col < 8; col++) {
 				chessButton = new JButton();
 				chessButton.setOpaque(true);
 				chessButton.setBorderPainted(false);
-				chessButton.setBackground(blackColor);
-				add(chessButton);
-			} else {
 				
-				chessButton = new JButton();
-				chessButton.setOpaque(true);
-				chessButton.setBorderPainted(false);
-				chessButton.setBackground(whiteColor);
+				if (row % 2 == 0) {
+					if (col % 2 == 0) {
+						chessButton.setBackground(Color.WHITE);
+					} else {
+						chessButton.setBackground(Color.BLACK);
+					}
+				} else {
+					if (col % 2 == 0) {
+						chessButton.setBackground(Color.BLACK);
+					} else {
+						chessButton.setBackground(Color.WHITE);
+					}
+				}
+
 				add(chessButton);
 			}
-			
-			if (i % 8 == 0) { 
-				Color temp = blackColor;
-				blackColor = whiteColor;
-				whiteColor = temp;
-			}
-			
 		}
 
 		this.setTitle(title);
 		this.setLayout(new GridLayout(8, 18));
 		this.setSize(650, 650);
 		this.setVisible(true);
-
 	}
 
 	public static void main(String[] args) {		
